@@ -1,0 +1,25 @@
+{
+    "name": "e-kakushin-to-calender",
+    "version": "0.1",
+    "description": "TestDev",
+    "permissions": ["activeTab","declarativeContent", "storage"],
+    "background": {
+      "scripts": ["js/background.js"],
+      "persistent": false
+    },
+    "browser_action": {
+      "default_popup": "popup.html",
+      "default_icon": {
+        "32": "images/icon32.png"
+      }
+    },
+    "content_scripts": [{
+      "matches": ["https://*.e-kakushin.com/*"],
+      "js": ["js/main.js"],
+      "run_at": "document_end"
+    }],
+    "icons": {
+      "48": "images/icon48.png"
+    },
+    "manifest_version": 2
+}
